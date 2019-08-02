@@ -1,3 +1,5 @@
 # docker-demo
 
-![](https://ghbtns.com/github-btn.html?user=AdJIa&repo=docker-demo&type=star&count=true&size=large&v=2)
+![forks](https://img.shields.io/github/forks/AdJIa/docker-demo)
+![star](https://img.shields.io/github/stars/AdJIa/docker-demo)
+![issues](https://img.shields.io/github/issues/AdJIa/docker-demo)
