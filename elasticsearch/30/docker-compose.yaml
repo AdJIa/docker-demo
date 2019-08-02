@@ -1,0 +1,30 @@
+version: '2.2'
+services:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.2.0
+    container_name: kibana7_01
+    environment:
+      - "I18N_LOCALE=zh-CN"
+    ports:
+      - "5601:5601"
+    networks: 
+      - elknetwork
+  elasticsearch:
+    image: registry.cn-beijing.aliyuncs.com/losejia/elasticsearch-ik-pinyin:7.2.0
+    container_name: es7_01
+    environment:
+      - "ES_JAVA_OPTS=-Xms2048m -Xmx2048m"
+    volumes:
+      - /a/domains/elasticsearch-7.2.0/data:/usr/share/elasticsearch/data
+      - /a/domains/elasticsearch-7.2.0/logs:/usr/share/elasticsearch/logs
+      - /a/domains/elasticsearch-7.2.0/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks: 
+      elknetwork: 
+        aliases: 
+          - elasticsearch
+networks:
+   elknetwork: 
+    driver: bridge

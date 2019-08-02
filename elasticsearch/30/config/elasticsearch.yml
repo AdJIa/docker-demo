@@ -1,0 +1,17 @@
+
+cluster.name: zmn-es7
+node.name: node-7-30
+node.data: true
+node.master: true
+path.logs: /usr/share/elasticsearch/logs
+path.data: /usr/share/elasticsearch/data
+network.host: 0.0.0.0
+network.publish_host: 192.168.100.30
+discovery.seed_hosts: ["192.168.100.30:9300", "192.168.100.31:9300", "192.168.100.34:9300"]
+cluster.initial_master_nodes: ["192.168.100.30:9300", "192.168.100.31:9300", "192.168.100.34:9300"]
+gateway.recover_after_nodes: 3
+action.destructive_requires_name: true
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+xpack.security.enabled: true
+xpack.security.transport.ssl.enabled: true
